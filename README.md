@@ -12,6 +12,6 @@ Finally, these scripts are meant to compliment the work of other (more comprehen
 
 | Academic Year | Preproc. Script op| Notes |
 | ------- | -------------- | ------------- | 
-| 2019-2020 | [2019-2020](https://youtu.be/cclUd_HoRlo) | Notes for 2019-2020 |
-| 2020-2021 | [2020-2021](https://www.youtube.com/watch?v=zYYBtxHWE0A) | Notes for 2020-2021
+| 2019-2020 | [2019-2020](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/preprocess-nces-ccd-2019-2020.R) | Notes for 2019-2020 |
+| 2020-2021 | [2020-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/preprocess-nces-ccd-2020-2021.R) | Notes for 2020-2021
 
