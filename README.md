@@ -32,7 +32,7 @@ At the bottom of the webpage, there's also a link to the [EDGE website](https://
 * This file requires a bit of manual adjustment to turn it into a legitimate dataframe, readable by R as a CSV file. 
 * There is an accompanying [article](https://www.dailykos.com/stories/2020/11/19/1163009/-Daily-Kos-Elections-presidential-results-by-congressional-district-for-2020-2016-and-2012) that describes the dataset and methodology used to generate this data. 
 
-[Voting data at the state level]((https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/42MVDX)) is provided by the [MIT Election Data and Science Lab](https://electionlab.mit.edu/data). 
+[Voting data at the state level](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/42MVDX) is provided by the [MIT Election Data and Science Lab](https://electionlab.mit.edu/data). 
 
 # R Scripts for Processing NCES and Survey Data
 
