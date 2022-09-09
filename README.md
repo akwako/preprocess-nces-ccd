@@ -23,14 +23,36 @@ Voter data
 
 # Using the Script for Preprocessing Data
 
-| Academic Year | 1. NCES cleaning | 2. Combine & Add Vote | 3. Merge w/ Survey | Notes |
-| ------- | ------------- |  ------------- |  ------------- |  ------------- | 
-| 2015-2016 | [2015-2016](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/preprocess-nces-ccd-2019-2020.R) | 2 | 3 | Notes |
-| 2016-2017 | [2016-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/preprocess-nces-ccd-2020-2021.R) | 2 | 3 | Notes |
-| 2017-2018 | [2016-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/preprocess-nces-ccd-2020-2021.R) | 2 | 3 | Notes |
-| 2018-2019 | [2016-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/preprocess-nces-ccd-2020-2021.R) | 2 | 3 | Notes |
-| 2019-2020 | [2016-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/preprocess-nces-ccd-2020-2021.R) | 2 | 3 | Notes |
+| Academic Year | NCES Mgmt. | NCES Join | Survey Mgmt. | Survey Results | Survey Output | 
+| --- | --- | --- | --- | --- | --- | 
+| 2015-2016 |  |  |  |  |  |
+| 2016-2017 | [2016-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220807_cleanNCESsch_2016-2021.R) |  |  |  |  |
+| 2017-2018 | [2016-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220807_cleanNCESsch_2016-2021.R) | [2017-2018](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220807_nces_combine_addVote2018.R) | [2018](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220901_procSurv2018.R) | [2018/2022](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220829_toplineRes.R) | 5 |
+| 2018-2019 | [2016-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220807_cleanNCESsch_2016-2021.R) |  |  |  |  |
+| 2019-2020 | [2016-2021](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220807_cleanNCESsch_2016-2021.R) | [2019-2020](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220807_nces_combine_addVote2022.R) | [2022](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220818_procSurvAndRepresentative.R) | [2018/2022](https://github.com/akwako/preprocess-nces-ccd/blob/main/preproc-scripts/20220829_toplineRes.R) | 5 |
 
 
 Depending on which year you need, download the appropriate script. Every few years, NCES changes the format of the data, and so the processing needs to be changed. While there are minor differences year-to-year, I've kept years that have the same general structure in the same script out of convenience. 
 
+1. NCES Mgmt. 
+    * Manages NCES data
+        * Combines select variables from NCES CCD datasets, 
+        * Determines missing values using NCES codes, 
+        * Adds additional variables, e.g., Percentage White Students ("white_pct2020")
+    * Script is to be run separately for each academic year 
+2. NCES Join
+    * Joins multiple academic years into single NCES dataset
+    * Adds Trump Vote (at state and congression district levels) from external data sources
+3. Survey Mgmt
+    * Manages Survey data
+        * Cleans survey data 
+        * (Survey data not provided)
+    * Joins NCES data with school survey data via unique identifier, "NCESSCH"
+4. Gen. Results
+    * Generates CSV file of survey results
+    * Statistics (including mean, standard deviation, and confidence intervals) are computed using bootstrap methods
+    * Produces separate output file of survey results in aggregate and survey results disaggregated by background variables (contingency tables)
+5. Gen. Output
+    * Generates a .txt file output of survey results
+    * For each item, includes wording, number of respondents included in calculations, and table of responses
+    * Separate files are generated for each contingency table desired
